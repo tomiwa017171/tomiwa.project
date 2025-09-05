@@ -1,0 +1,206 @@
+header {
+     background-color: #1e293b;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px 40px;
+     position: sticky;
+     top: 0;
+     z-index: 1000;
+     box-shadow: 0;
+}
+h3 {
+     color: #38bdf8;
+     font-weight: bold;
+     font-size: 20px;
+     user-select: none;
+}
+
+h2 {
+     display: flex;
+     justify-content: center;
+}
+.form {
+     background: linear-gradient(135deg, #f8fafc 0%, #6f8c99 60%, #0f172a 100%);
+    border-radius: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;         /* Center items horizontally */
+    margin: 40px auto;           /* Center the form horizontally on the page */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+
+}
+.form :hover {
+    transform: scale(1.02);
+}
+input {
+    
+    padding: 20px;
+    width: 200px;
+    border: 1px solid #f7f6f6;
+    border-radius: 5px;
+    background-color: rgb(245, 248, 248);
+    margin: 15px auto;      /* Center input horizontally */
+    display: block;         /* Make input take full width for margin auto to work */
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* Center horizontally */
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+  color: rgb(12, 0, 0);
+  margin: 20px auto;         /* Center container itself */
+  position: relative;
+  width: fit-content;        /* Shrink to fit content */
+
+}
+
+.checkbox-container input {
+  display: none;
+}
+
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: #1e293b;
+  border: 2px solid #38bdf8;
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.checkbox-container input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 1px;
+  width: 6px;
+  height: 12px;
+  border: solid #38bdf8;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+button{
+    background-color: rgb(129, 165, 219);
+    padding: 10px;
+    width: 300px;
+    border: #38bdf8;
+    border-radius: 10px;
+}
+p {
+    display: flex;
+    justify-content:center ;
+}
+body {
+    
+     background: linear-gradient(to right, #dedfe2, #0f172a);
+}
+.forgot-password {
+  display: flex;
+  justify-content: center;    /* Center horizontally */
+  align-items: center;        /* Center vertically if needed */
+  width: 100%;
+  margin: 20px auto 20px auto; /* Center with margin auto */
+  text-align: center;         /* Center text inside if it's a link */
+}
+
+.hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001;
+    }
+
+    .hamburger .line {
+        width: 30px;
+        height: 3px;
+        background: rgb(236, 235, 235);
+        margin: 5px 0;
+        border-radius: 2px;
+        transition: 0.4s;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        box-shadow: none;
+        transition: right 0.3s;
+    }
+
+    .menu ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        border: none;
+    }
+
+    .menu a {
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        color: #38bdf8;
+        font-size: 20px;
+        font-weight: bold;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .menu a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #333;
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: flex;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            background: #444;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .menu ul {
+            flex-direction: column;
+        }
+
+        .menu.active {
+            display: flex;
+        }
+        .menu a {
+            color: #fff;
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .menu a:last-child {
+            border-bottom: none;
+        }
+
+        .hamburger.active .line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+    }

@@ -1,0 +1,105 @@
+.coinss {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-bottom: 2rem;
+    margin-top: 2rem; /* Add space at the top */
+}
+
+/* Place this .coinss container ABOVE your .contact-container in your HTML:
+   <div class="coinss">
+     <img src="img/coin2.jpg" class="bouncy-coin" alt="coin">
+     <img src="img/coin1.jpg" class="bouncy-coin2" alt="coin">
+     <img src="img/lite.jpg" class="bouncy-coin3" alt="coin">
+     <img src="img/dodge.jpg" class="bouncy-coin4" alt="coin">
+     <img src="img/pi.jpg" class="bouncy-coin5" alt="coin">
+   </div>
+   <div class="contact-container">
+     ...
+   </div>
+*/
+
+.bouncy-coin,
+.bouncy-coin2,
+.bouncy-coin3,
+.bouncy-coin4,
+.bouncy-coin5 {
+    width: 100px;
+    height: 100px;
+    animation: bounce 2s ease-in-out infinite;
+    overflow: hidden;
+    border-radius: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.contact-container {
+  background-color: #1e1e1e;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(60, 151, 133, 0.2);
+}
+
+.contact-container h1 {
+  color: #5fe4c9;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.contact-container p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #2b2b2b;
+  color: #f5f5f5;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: #00ffcc;
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #00e6b8;
+}
